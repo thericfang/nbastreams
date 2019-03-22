@@ -8,6 +8,7 @@ from flask_pymongo import PyMongo
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost/myDatabase"
 mongo = PyMongo(app)
+
 @app.route('/')
 def hello():
     reddit = establish_connection_reddit()
@@ -54,12 +55,13 @@ def find_matching_urls(urls, str): # finds urls that have the given string
             low+=1
     return matching_urls
     
-# TODO: Game submissions that matches a format. 
-def game_submissions(subreddit):
+# TODO: Return game submissions that matches a format. 
+# def game_submissions(subreddit):
+
+
     
 
 
 # TODO: If game submissions match format, must retrieve links that match buffstreams and two top. Put into database
-
 if __name__ == '__main__':
     app.run()
